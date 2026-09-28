@@ -8,7 +8,7 @@ const env = {
   FRONTEND_URL: process.env.FRONTEND_URL || 'http://localhost:5173,http://localhost:3000',
   
   // Firebase configuration
-  FIREBASE_PROJECT_ID: process.env.FIREBASE_PROJECT_ID || 'nexora-2026-3a2f2',
+  FIREBASE_PROJECT_ID: process.env.FIREBASE_PROJECT_ID || 'nexora-2026-local',
   FIREBASE_CLIENT_EMAIL: process.env.FIREBASE_CLIENT_EMAIL || '',
   FIREBASE_PRIVATE_KEY: (process.env.FIREBASE_PRIVATE_KEY || '').replace(/\\n/g, '\n'),
   

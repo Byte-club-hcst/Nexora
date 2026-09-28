@@ -1,7 +1,7 @@
 // Run this ONCE locally: node scripts/setAdminClaim.js <admin-uid>
 // <admin-uid> is the UID you copied when you seeded the admin user in Firebase Console.
 require('dotenv').config();
-const { admin, db } = require('../config/firebase-admin');
+const { admin, db } = require('../src/config/firebase');
 
 const uid = process.argv[2];
 if (!uid) {

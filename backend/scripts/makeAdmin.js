@@ -1,6 +1,6 @@
 // Run locally only: node scripts/makeAdmin.js someone@example.com
 require('dotenv').config();
-const { admin, auth } = require('../config/firebase-admin');
+const { admin, auth } = require('../src/config/firebase');
 
 const email = process.argv[2];
 

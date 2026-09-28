@@ -66,8 +66,12 @@ export function AuthProvider({ children }) {
       console.warn('Verification email could not be sent:', e.message);
     }
 
-    // Complete profile on backend
-    await api.post('/api/auth/complete-signup', { name, college, phone });
+    // Complete profile on backend if reachable
+    try {
+      await api.post('/api/auth/complete-signup', { name, college, phone });
+    } catch (err) {
+      console.warn('[AuthContext] Backend complete-signup offline note:', err.message);
+    }
     return cred.user;
   };
 

@@ -136,6 +136,20 @@ class MockAuth {
   }
 
   async verifyIdToken(token) {
+    if (!token) throw new Error('Token is missing');
+
+    if (token.startsWith('local-token:')) {
+      const parts = token.split(':');
+      const uid = parts[1] || 'mock-user-id';
+      const email = decodeURIComponent(parts[2] || 'user@nexora.local');
+      const role = parts[3] || (email.toLowerCase().includes('admin') ? 'admin' : 'participant');
+      return {
+        uid,
+        email,
+        role: this.customClaims.get(uid)?.role || role,
+        email_verified: true,
+      };
+    }
     if (token === 'admin-token') {
       return {
         uid: 'mock-admin-id',
@@ -148,7 +162,7 @@ class MockAuth {
       const uid = token.replace('participant-', '');
       return {
         uid,
-        email: `${uid}@student.hcst.edu.in`,
+        email: uid.includes('@') ? uid : `${uid}@student.hcst.edu.in`,
         role: 'participant',
         email_verified: true,
       };
@@ -173,7 +187,9 @@ class MockAuth {
 let db;
 let auth;
 
+// External connections are disabled by default for offline/standalone mode
 const hasLiveCredentials = !!(
+  process.env.USE_LIVE_FIREBASE === 'true' &&
   env.FIREBASE_CLIENT_EMAIL &&
   env.FIREBASE_PRIVATE_KEY &&
   !env.FIREBASE_PRIVATE_KEY.includes('your_') &&

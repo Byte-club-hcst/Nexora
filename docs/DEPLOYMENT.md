@@ -23,12 +23,12 @@ In Vercel **Settings → Environment Variables**, add:
 | Variable Name | Description | Example Value |
 |---|---|---|
 | `VITE_API_URL` | Production Backend URL | `https://api.nexora.tech` |
-| `VITE_FIREBASE_API_KEY` | Client Web API Key | `AIzaSy...` |
-| `VITE_FIREBASE_AUTH_DOMAIN` | Firebase Auth Domain | `nexora-2026-3a2f2.firebaseapp.com` |
-| `VITE_FIREBASE_PROJECT_ID` | Firebase Project ID | `nexora-2026-3a2f2` |
-| `VITE_FIREBASE_STORAGE_BUCKET` | Firebase Storage Bucket | `nexora-2026-3a2f2.firebasestorage.app` |
-| `VITE_FIREBASE_MESSAGING_SENDER_ID` | Sender ID | `106896070822` |
-| `VITE_FIREBASE_APP_ID` | App ID | `1:106896070822:web:...` |
+| `VITE_FIREBASE_API_KEY` | Client Web API Key | `your_web_api_key_here` |
+| `VITE_FIREBASE_AUTH_DOMAIN` | Firebase Auth Domain | `your-project-id.firebaseapp.com` |
+| `VITE_FIREBASE_PROJECT_ID` | Firebase Project ID | `your-project-id` |
+| `VITE_FIREBASE_STORAGE_BUCKET` | Firebase Storage Bucket | `your-project-id.firebasestorage.app` |
+| `VITE_FIREBASE_MESSAGING_SENDER_ID` | Sender ID | `your_messaging_sender_id` |
+| `VITE_FIREBASE_APP_ID` | App ID | `your_app_id` |
 
 ### Step 3: Domain Mapping
 In Vercel **Settings → Domains**, add `nexora.tech` and `www.nexora.tech`. Configure your DNS provider with the CNAME / A records provided by Vercel.
@@ -54,8 +54,8 @@ In Vercel **Settings → Domains**, add `nexora.tech` and `www.nexora.tech`. Con
    - `NODE_ENV`: `production`
    - `PORT`: `10000` (Render dynamically injects this, but default to 10000)
    - `FRONTEND_URL`: `https://nexora.tech,https://www.nexora.tech`
-   - `FIREBASE_PROJECT_ID`: `nexora-2026-3a2f2`
-   - `FIREBASE_CLIENT_EMAIL`: `firebase-adminsdk-xxx@nexora-2026-3a2f2.iam.gserviceaccount.com`
+   - `FIREBASE_PROJECT_ID`: `your-firebase-project-id`
+   - `FIREBASE_CLIENT_EMAIL`: `firebase-adminsdk-xxx@your-project-id.iam.gserviceaccount.com`
    - `FIREBASE_PRIVATE_KEY`: Private key string with converted `\n` newlines
    - `R2_ACCOUNT_ID`: Cloudflare Account ID
    - `R2_ACCESS_KEY_ID`: Cloudflare R2 Access Key

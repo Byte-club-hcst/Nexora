@@ -18,7 +18,7 @@ test('Admin Service: verifyRegistration rejects invalid status string', async ()
 
 test('Audit Service: sanitize successfully strips sensitive tokens and secrets', () => {
   const sensitivePayload = {
-    apiKey: 'AIzaSySecretApiKey123',
+    apiKey: 'mockSecretApiKey123',
     password: 'superSecretPassword',
     authToken: 'Bearer eyJhbGciOi...',
     nested: {
@@ -28,6 +28,7 @@ test('Audit Service: sanitize successfully strips sensitive tokens and secrets',
   };
 
   const sanitized = auditService.sanitize(sensitivePayload);
+  assert.equal(sanitized.apiKey, '[REDACTED]');
   assert.equal(sanitized.password, '[REDACTED]');
   assert.equal(sanitized.authToken, '[REDACTED]');
   assert.equal(sanitized.nested.privateKey, '[REDACTED]');
