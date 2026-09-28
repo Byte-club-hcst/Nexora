@@ -108,7 +108,7 @@ export default function AdminPayments() {
       key: 'name',
       render: (name, row) => (
         <div>
-          <strong style={{ color: '#fff' }}>{name}</strong>
+          <strong style={{ color: 'var(--text-primary)' }}>{name}</strong>
           <p style={{ margin: 0, fontSize: '0.8rem', color: 'var(--text-muted)' }}>{row.email} • {row.phone}</p>
         </div>
       ),

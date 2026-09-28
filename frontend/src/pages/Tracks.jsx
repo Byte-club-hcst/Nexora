@@ -107,11 +107,11 @@ export default function Tracks() {
               <div key={track.id || idx} className="card" style={{ padding: '2rem' }}>
                 <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1rem', marginBottom: '1rem' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '0.85rem' }}>
-                    <div style={{ padding: '0.65rem', borderRadius: 'var(--radius-md)', background: 'rgba(45, 212, 191, 0.15)', color: 'var(--accent-teal-light)' }}>
+                    <div style={{ padding: '0.65rem', borderRadius: 'var(--radius-md)', background: 'var(--accent-soft)', color: 'var(--accent-teal)' }}>
                       <Icon size={26} />
                     </div>
                     <div>
-                      <h2 style={{ fontSize: '1.4rem', margin: 0 }}>{track.name || track.id}</h2>
+                      <h2 style={{ fontSize: '1.4rem', margin: 0, color: 'var(--text-primary)' }}>{track.name || track.id}</h2>
                       <span className="badge badge-info" style={{ marginTop: '0.25rem' }}>{track.shortName || track.id}</span>
                     </div>
                   </div>
@@ -122,10 +122,10 @@ export default function Tracks() {
                   </Link>
                 </div>
 
-                <p style={{ marginBottom: '1.25rem' }}>{track.description}</p>
+                <p style={{ marginBottom: '1.25rem', color: 'var(--text-secondary)' }}>{track.description}</p>
 
                 <div>
-                  <h4 style={{ fontSize: '0.95rem', color: 'var(--accent-cream)', marginBottom: '0.65rem' }}>
+                  <h4 style={{ fontSize: '0.95rem', color: 'var(--dark-teal)', marginBottom: '0.65rem' }}>
                     Recommended Topic Areas:
                   </h4>
                   <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
@@ -134,11 +134,11 @@ export default function Tracks() {
                         key={tIdx}
                         style={{
                           fontSize: '0.825rem',
-                          background: 'rgba(255, 255, 255, 0.05)',
+                          background: 'var(--bg-secondary)',
                           border: '1px solid var(--border)',
                           padding: '0.25rem 0.65rem',
                           borderRadius: 'var(--radius-sm)',
-                          color: 'var(--text-secondary)',
+                          color: 'var(--text-primary)',
                         }}
                       >
                         {topic}

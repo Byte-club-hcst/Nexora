@@ -32,9 +32,9 @@ export default function Sponsors() {
           <span>Partners & Backers</span>
         </div>
         <h1 style={{ marginBottom: '1rem' }}>
-          Sponsors & <span className="heading-gradient">Academic Partners</span>
+          Sponsors & <span className="heading-accent">Academic Partners</span>
         </h1>
-        <p style={{ fontSize: '1.1rem', marginBottom: '3rem' }}>
+        <p style={{ fontSize: '1.05rem', marginBottom: '3rem', color: 'var(--text-secondary)' }}>
           We extend our sincere gratitude to our institutional patrons, technical associations, and industry collaborators.
         </p>
 
@@ -43,10 +43,10 @@ export default function Sponsors() {
             <div key={idx} className="card" style={{ padding: '2rem' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem' }}>
                 <span className="badge badge-success">{sp.badge}</span>
-                <span style={{ fontSize: '0.85rem', color: 'var(--accent-cream)', fontWeight: 600 }}>{sp.tier}</span>
+                <span style={{ fontSize: '0.85rem', color: 'var(--accent-teal)', fontWeight: 600 }}>{sp.tier}</span>
               </div>
-              <h2 style={{ fontSize: '1.4rem', color: '#fff', marginBottom: '0.5rem' }}>{sp.name}</h2>
-              <p style={{ margin: 0, fontSize: '0.95rem' }}>{sp.desc}</p>
+              <h2 style={{ fontSize: '1.4rem', color: 'var(--text-primary)', marginBottom: '0.5rem' }}>{sp.name}</h2>
+              <p style={{ margin: 0, fontSize: '0.95rem', color: 'var(--text-secondary)' }}>{sp.desc}</p>
             </div>
           ))}
         </div>
@@ -55,17 +55,17 @@ export default function Sponsors() {
         <div
           className="card"
           style={{
-            background: 'linear-gradient(135deg, rgba(13, 38, 38, 0.9) 0%, rgba(20, 60, 60, 0.9) 100%)',
-            border: '1px solid var(--accent-teal)',
+            background: 'var(--accent-soft)',
+            border: '1.5px solid var(--accent-teal)',
             padding: '2.5rem',
             textAlign: 'center',
           }}
         >
-          <Sparkles size={32} color="var(--accent-amber)" style={{ marginBottom: '1rem' }} />
-          <h2 style={{ fontSize: '1.5rem', color: '#fff', marginBottom: '0.75rem' }}>
+          <Sparkles size={32} color="var(--accent-teal)" style={{ marginBottom: '1rem' }} />
+          <h2 style={{ fontSize: '1.5rem', color: 'var(--text-primary)', marginBottom: '0.75rem' }}>
             Interested in Sponsoring NEXORA 2026?
           </h2>
-          <p style={{ maxWidth: '600px', margin: '0 auto 1.5rem' }}>
+          <p style={{ maxWidth: '600px', margin: '0 auto 1.5rem', color: 'var(--text-secondary)' }}>
             Showcase your brand and recruit promising student engineers from North India's premier engineering institutions. We offer custom promotional packages, branding in conference proceedings, and keynote speaking slots.
           </p>
           <a href="mailto:nexora2026@hcst.edu.in?subject=Sponsorship%20Inquiry%20-%20NEXORA%202026" className="btn btn-primary">

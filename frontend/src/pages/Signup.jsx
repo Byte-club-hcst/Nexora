@@ -73,8 +73,8 @@ export default function Signup() {
               width: '52px',
               height: '52px',
               borderRadius: '50%',
-              background: 'rgba(45, 212, 191, 0.15)',
-              color: 'var(--accent-teal-light)',
+              background: 'var(--accent-soft)',
+              color: 'var(--accent-teal)',
               display: 'inline-flex',
               alignItems: 'center',
               justifyContent: 'center',
@@ -83,7 +83,7 @@ export default function Signup() {
           >
             <UserPlus size={26} />
           </div>
-          <h1 style={{ fontSize: '1.75rem', marginBottom: '0.35rem' }}>Create Account</h1>
+          <h1 style={{ fontSize: '1.75rem', marginBottom: '0.35rem', color: 'var(--text-primary)' }}>Create Account</h1>
           <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>
             Register your profile for NEXORA 2026
           </p>
@@ -98,8 +98,8 @@ export default function Signup() {
               padding: '0.85rem',
               borderRadius: 'var(--radius-md)',
               background: 'var(--status-error-bg)',
-              border: '1px solid rgba(239, 68, 68, 0.3)',
-              color: '#f87171',
+              border: '1px solid rgba(179, 38, 30, 0.3)',
+              color: 'var(--status-error)',
               fontSize: '0.875rem',
               marginBottom: '1.5rem',
             }}

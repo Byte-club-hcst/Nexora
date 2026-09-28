@@ -88,11 +88,11 @@ export default function ImportantDates() {
                 <span
                   style={{
                     display: 'inline-block',
-                    fontSize: '1rem',
+                    fontSize: '0.95rem',
                     fontWeight: 700,
-                    color: item.highlight ? 'var(--accent-amber)' : 'var(--text-bright)',
+                    color: item.highlight ? 'var(--accent-orange)' : 'var(--accent-teal)',
                     fontFamily: 'monospace',
-                    background: 'rgba(0, 0, 0, 0.4)',
+                    background: 'var(--bg-secondary)',
                     padding: '0.35rem 0.85rem',
                     borderRadius: 'var(--radius-sm)',
                     border: '1px solid var(--border)',
@@ -105,10 +105,10 @@ export default function ImportantDates() {
           ))}
         </div>
 
-        <div className="card" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1rem', background: 'rgba(45, 212, 191, 0.05)' }}>
+        <div className="card" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1rem', background: 'var(--accent-soft)', border: '1px solid var(--accent-teal)' }}>
           <div>
-            <h4 style={{ margin: '0 0 0.25rem' }}>Need an extension or technical help?</h4>
-            <p style={{ margin: 0, fontSize: '0.85rem' }}>Our student coordination desk is available on WhatsApp and phone.</p>
+            <h4 style={{ margin: '0 0 0.25rem', color: 'var(--text-primary)' }}>Need an extension or technical help?</h4>
+            <p style={{ margin: 0, fontSize: '0.85rem', color: 'var(--text-secondary)' }}>Our student coordination desk is available on WhatsApp and phone.</p>
           </div>
           <Link to="/contact" className="btn btn-outline btn-sm">
             Contact Support

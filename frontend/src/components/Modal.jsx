@@ -48,9 +48,9 @@ export default function Modal({
           overflowY: 'auto',
           padding: '1.75rem',
           position: 'relative',
-          background: 'rgba(10, 30, 30, 0.95)',
-          border: '1px solid var(--accent-teal)',
-          boxShadow: 'var(--shadow-glow), var(--shadow-lg)',
+          background: '#FFFFFF',
+          border: '1px solid var(--border)',
+          boxShadow: 'var(--shadow-lg)',
         }}
         onClick={(e) => e.stopPropagation()}
       >
@@ -64,7 +64,7 @@ export default function Modal({
             borderBottom: '1px solid var(--border)',
           }}
         >
-          <h3 style={{ margin: 0, color: 'var(--text-bright)' }}>{title}</h3>
+          <h3 style={{ margin: 0, color: 'var(--text-primary)' }}>{title}</h3>
           <button
             onClick={onClose}
             style={{

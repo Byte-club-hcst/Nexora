@@ -70,8 +70,8 @@ export default function Login() {
               width: '52px',
               height: '52px',
               borderRadius: '50%',
-              background: 'rgba(45, 212, 191, 0.15)',
-              color: 'var(--accent-teal-light)',
+              background: 'var(--accent-soft)',
+              color: 'var(--accent-teal)',
               display: 'inline-flex',
               alignItems: 'center',
               justifyContent: 'center',
@@ -80,7 +80,7 @@ export default function Login() {
           >
             <LogIn size={26} />
           </div>
-          <h1 style={{ fontSize: '1.75rem', marginBottom: '0.35rem' }}>Sign In</h1>
+          <h1 style={{ fontSize: '1.75rem', marginBottom: '0.35rem', color: 'var(--text-primary)' }}>Sign In</h1>
           <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>
             Access your NEXORA 2026 conference portal
           </p>
@@ -95,8 +95,8 @@ export default function Login() {
               padding: '0.85rem',
               borderRadius: 'var(--radius-md)',
               background: 'var(--status-error-bg)',
-              border: '1px solid rgba(239, 68, 68, 0.3)',
-              color: '#f87171',
+              border: '1px solid rgba(179, 38, 30, 0.3)',
+              color: 'var(--status-error)',
               fontSize: '0.875rem',
               marginBottom: '1.5rem',
             }}
@@ -129,7 +129,7 @@ export default function Login() {
               <button
                 type="button"
                 onClick={() => { setResetEmail(email); setResetModalOpen(true); }}
-                style={{ background: 'none', border: 'none', color: 'var(--accent-teal-light)', fontSize: '0.8rem', cursor: 'pointer' }}
+                style={{ background: 'none', border: 'none', color: 'var(--accent-teal)', fontSize: '0.8rem', cursor: 'pointer' }}
               >
                 Forgot password?
               </button>

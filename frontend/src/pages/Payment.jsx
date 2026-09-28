@@ -162,8 +162,8 @@ export default function Payment() {
         {paymentStatus === 'Verified' ? (
           <div className="card" style={{ textAlign: 'center', padding: '3rem 2rem' }}>
             <CheckCircle size={56} color="var(--status-success)" style={{ marginBottom: '1rem' }} />
-            <h2 style={{ marginBottom: '0.5rem', color: '#fff' }}>Payment Verified!</h2>
-            <p style={{ marginBottom: '2rem' }}>
+            <h2 style={{ marginBottom: '0.5rem', color: 'var(--text-primary)' }}>Payment Verified!</h2>
+            <p style={{ marginBottom: '2rem', color: 'var(--text-secondary)' }}>
               Your registration fee has been successfully verified by the organizing team. You are now cleared for abstract submission.
             </p>
             <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem' }}>
@@ -181,7 +181,7 @@ export default function Payment() {
             {/* Payment QR and Upload Card */}
             <div className="card" style={{ marginBottom: '2rem', padding: '2rem' }}>
               <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
-                <h3 style={{ marginBottom: '0.5rem', color: '#fff' }}>Scan & Pay via UPI</h3>
+                <h3 style={{ marginBottom: '0.5rem', color: 'var(--text-primary)' }}>Scan & Pay via UPI</h3>
                 <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>
                   Pay ₹{registration.feeAmount || 100} using Google Pay, PhonePe, Paytm, or BHIM
                 </p>
@@ -193,7 +193,8 @@ export default function Payment() {
                     background: '#ffffff',
                     borderRadius: 'var(--radius-md)',
                     margin: '1.25rem 0',
-                    boxShadow: 'var(--shadow-md)',
+                    border: '1px solid var(--border)',
+                    boxShadow: 'var(--shadow-sm)',
                   }}
                 >
                   <img
@@ -204,7 +205,7 @@ export default function Payment() {
                 </div>
 
                 <div style={{ background: 'var(--bg-secondary)', padding: '0.75rem', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border)', maxWidth: '340px', margin: '0 auto' }}>
-                  <p style={{ margin: 0, fontSize: '0.85rem', color: 'var(--accent-cream)', fontFamily: 'monospace' }}>
+                  <p style={{ margin: 0, fontSize: '0.85rem', color: 'var(--accent-teal)', fontWeight: 600, fontFamily: 'monospace' }}>
                     UPI ID: byte.hcst@upi (or scan QR code)
                   </p>
                 </div>
@@ -219,8 +220,8 @@ export default function Payment() {
                     padding: '0.85rem',
                     borderRadius: 'var(--radius-md)',
                     background: 'var(--status-error-bg)',
-                    border: '1px solid rgba(239, 68, 68, 0.3)',
-                    color: '#f87171',
+                    border: '1px solid rgba(179, 38, 30, 0.3)',
+                    color: 'var(--status-error)',
                     fontSize: '0.875rem',
                     marginBottom: '1.5rem',
                   }}

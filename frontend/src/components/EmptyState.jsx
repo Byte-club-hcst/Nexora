@@ -26,17 +26,17 @@ export default function EmptyState({
           width: '64px',
           height: '64px',
           borderRadius: '50%',
-          background: 'rgba(45, 212, 191, 0.1)',
+          background: 'var(--accent-soft)',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          color: 'var(--accent-teal-light)',
+          color: 'var(--accent-teal)',
           marginBottom: '1rem',
         }}
       >
         <Icon size={32} />
       </div>
-      <h3 style={{ color: 'var(--text-bright)', marginBottom: '0.5rem' }}>{title}</h3>
+      <h3 style={{ color: 'var(--text-primary)', marginBottom: '0.5rem' }}>{title}</h3>
       <p style={{ maxWidth: '420px', marginBottom: actionLabel && onAction ? '1.5rem' : 0 }}>
         {message}
       </p>

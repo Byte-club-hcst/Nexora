@@ -80,8 +80,8 @@ export default function Event() {
               >
                 <div
                   style={{
-                    background: 'rgba(45, 212, 191, 0.12)',
-                    color: 'var(--accent-teal-light)',
+                    background: 'var(--accent-soft)',
+                    color: 'var(--accent-teal)',
                     padding: '0.85rem',
                     borderRadius: 'var(--radius-md)',
                     flexShrink: 0,
@@ -91,12 +91,12 @@ export default function Event() {
                 </div>
                 <div style={{ flex: 1 }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.35rem' }}>
-                    <h3 style={{ margin: 0, fontSize: '1.15rem' }}>{item.title}</h3>
-                    <span style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--accent-cream)', background: 'rgba(255, 228, 181, 0.1)', padding: '0.2rem 0.6rem', borderRadius: 'var(--radius-sm)' }}>
+                    <h3 style={{ margin: 0, fontSize: '1.15rem', color: 'var(--text-primary)' }}>{item.title}</h3>
+                    <span style={{ fontSize: '0.85rem', fontWeight: 700, color: 'var(--accent-orange)', background: 'var(--accent-soft)', padding: '0.2rem 0.6rem', borderRadius: 'var(--radius-sm)' }}>
                       {item.time}
                     </span>
                   </div>
-                  <p style={{ margin: 0, fontSize: '0.9rem' }}>{item.desc}</p>
+                  <p style={{ margin: 0, fontSize: '0.9rem', color: 'var(--text-secondary)' }}>{item.desc}</p>
                 </div>
               </div>
             );
@@ -106,8 +106,8 @@ export default function Event() {
         {/* Venue Information */}
         <div className="card" style={{ border: '1px solid var(--accent-teal)' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem' }}>
-            <MapPin size={24} color="var(--accent-teal-light)" />
-            <h3 style={{ margin: 0 }}>Venue & Logistics</h3>
+            <MapPin size={24} color="var(--accent-teal)" />
+            <h3 style={{ margin: 0, color: 'var(--dark-teal)' }}>Venue & Logistics</h3>
           </div>
           <p style={{ marginBottom: '1rem' }}>
             <strong>Location:</strong> Dr. A.P.J. Abdul Kalam Auditorium, HCST Campus, NH-19, Farah, Mathura.

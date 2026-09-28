@@ -219,14 +219,14 @@ export default function Submission() {
             </div>
 
             <div style={{ marginBottom: '1.5rem' }}>
-              <h3 style={{ color: '#fff', fontSize: '1.3rem', marginBottom: '0.5rem' }}>
+              <h3 style={{ color: 'var(--text-primary)', fontSize: '1.3rem', marginBottom: '0.5rem' }}>
                 {existingSubmission.title}
               </h3>
               <span className="badge badge-info" style={{ marginBottom: '1rem' }}>{existingSubmission.track}</span>
               <p style={{ fontSize: '0.95rem', lineHeight: 1.7, color: 'var(--text-secondary)' }}>
                 {existingSubmission.abstract}
               </p>
-              <p style={{ fontSize: '0.85rem', color: 'var(--accent-cream)', marginTop: '0.75rem' }}>
+              <p style={{ fontSize: '0.85rem', color: 'var(--accent-teal)', fontWeight: 600, marginTop: '0.75rem' }}>
                 <strong>Keywords:</strong> {existingSubmission.keywords}
               </p>
             </div>
@@ -261,10 +261,10 @@ export default function Submission() {
           <span className="eyebrow-dot" />
           <span>Step 3 of 3</span>
         </div>
-        <h1 style={{ marginBottom: '0.5rem' }}>
+        <h1 style={{ marginBottom: '0.5rem', color: 'var(--text-primary)' }}>
           Abstract & Poster <span className="heading-gradient">Submission</span>
         </h1>
-        <p style={{ marginBottom: '2rem' }}>
+        <p style={{ marginBottom: '2rem', color: 'var(--text-secondary)' }}>
           Submission Deadline: <strong>{formatIST(config?.submissionDeadline || '2026-09-30T18:29:59.000Z')}</strong>.
         </p>
 
@@ -277,8 +277,8 @@ export default function Submission() {
               padding: '0.85rem',
               borderRadius: 'var(--radius-md)',
               background: 'var(--status-error-bg)',
-              border: '1px solid rgba(239, 68, 68, 0.3)',
-              color: '#f87171',
+              border: '1px solid rgba(179, 38, 30, 0.3)',
+              color: 'var(--status-error)',
               fontSize: '0.875rem',
               marginBottom: '1.5rem',
             }}
@@ -321,7 +321,7 @@ export default function Submission() {
           {/* Dynamic Authors Section (1 to 4 authors) */}
           <div style={{ margin: '1.75rem 0', padding: '1.25rem', background: 'var(--bg-secondary)', borderRadius: 'var(--radius-md)', border: '1px solid var(--border)' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
-              <h3 style={{ margin: 0, fontSize: '1.15rem', color: '#fff' }}>Authors (1 to 4)</h3>
+              <h3 style={{ margin: 0, fontSize: '1.15rem', color: 'var(--text-primary)' }}>Authors (1 to 4)</h3>
               {authors.length < 4 && (
                 <Button variant="outline" size="sm" onClick={addAuthor}>
                   <Plus size={14} />
@@ -335,21 +335,21 @@ export default function Submission() {
                 key={index}
                 style={{
                   padding: '1rem',
-                  background: 'var(--bg-input)',
+                  background: '#FFFFFF',
                   borderRadius: 'var(--radius-sm)',
                   border: '1px solid var(--border)',
                   marginBottom: index < authors.length - 1 ? '1rem' : 0,
                 }}
               >
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem' }}>
-                  <span style={{ fontSize: '0.85rem', fontWeight: 700, color: 'var(--accent-teal-light)' }}>
+                  <span style={{ fontSize: '0.85rem', fontWeight: 700, color: 'var(--accent-teal)' }}>
                     Author #{index + 1} {index === 0 && '(Lead / Submitter)'}
                   </span>
                   {authors.length > 1 && (
                     <button
                       type="button"
                       onClick={() => removeAuthor(index)}
-                      style={{ background: 'none', border: 'none', color: '#f87171', cursor: 'pointer', display: 'flex', alignItems: 'center' }}
+                      style={{ background: 'none', border: 'none', color: 'var(--status-error)', cursor: 'pointer', display: 'flex', alignItems: 'center' }}
                     >
                       <Trash2 size={16} />
                     </button>

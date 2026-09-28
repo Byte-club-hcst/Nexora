@@ -95,8 +95,8 @@ export default function AdminSubmissions() {
       key: 'title',
       render: (title, row) => (
         <div style={{ maxWidth: '280px' }}>
-          <strong style={{ color: '#fff', fontSize: '0.9rem' }}>{title}</strong>
-          <p style={{ margin: '0.2rem 0 0', fontSize: '0.78rem', color: 'var(--accent-cream)' }}>
+          <strong style={{ color: 'var(--text-primary)', fontSize: '0.9rem' }}>{title}</strong>
+          <p style={{ margin: '0.2rem 0 0', fontSize: '0.78rem', color: 'var(--accent-teal)' }}>
             Keywords: {row.keywords || '—'}
           </p>
         </div>
@@ -254,7 +254,7 @@ export default function AdminSubmissions() {
       >
         <form onSubmit={handleReviewSubmit}>
           <div style={{ marginBottom: '1.25rem' }}>
-            <h4 style={{ color: '#fff', margin: '0 0 0.25rem' }}>{reviewTarget?.title}</h4>
+            <h4 style={{ color: 'var(--text-primary)', margin: '0 0 0.25rem' }}>{reviewTarget?.title}</h4>
             <span className="badge badge-info">{reviewTarget?.track}</span>
           </div>
 

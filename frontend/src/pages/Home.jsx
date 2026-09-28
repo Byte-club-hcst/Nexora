@@ -20,162 +20,245 @@ export default function Home() {
 
   return (
     <div className="animate-fade-in">
-      {/* ================= HERO SECTION ================= */}
+      {/* ================= HERO SECTION (Classic Dark Teal Banner from original design) ================= */}
       <section
         style={{
           position: 'relative',
-          padding: '4.5rem 1.5rem 5rem',
-          background: 'linear-gradient(180deg, rgba(10, 33, 33, 0.9) 0%, rgba(7, 22, 22, 0.98) 100%)',
-          borderBottom: '1px solid var(--border)',
+          padding: '5rem 1.5rem 5.5rem',
+          background: 'radial-gradient(circle at 30% 20%, var(--dark-teal-2) 0%, var(--dark-teal) 75%)',
+          color: '#ffffff',
           overflow: 'hidden',
         }}
       >
-        {/* Subtle decorative glow */}
         <div
+          className="container"
           style={{
-            position: 'absolute',
-            top: '-20%',
-            left: '50%',
-            transform: 'translateX(-50%)',
-            width: '800px',
-            height: '400px',
-            background: 'radial-gradient(circle, rgba(45, 212, 191, 0.12) 0%, transparent 70%)',
-            pointerEvents: 'none',
+            position: 'relative',
+            zIndex: 1,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            flexWrap: 'wrap',
+            gap: '2.5rem',
           }}
-        />
-
-        <div className="container" style={{ position: 'relative', zIndex: 1, textAlign: 'center', maxWidth: '880px' }}>
-          <div className="eyebrow" style={{ marginBottom: '1rem' }}>
-            <span className="eyebrow-dot" />
-            <span>National Student Research Conference</span>
-          </div>
-
-          <h1 style={{ marginBottom: '1.25rem' }}>
-            Transforming Ideas into Research at{' '}
-            <span className="heading-gradient">NEXORA 2026</span>
-          </h1>
-
-          <p
-            style={{
-              fontSize: '1.2rem',
-              color: 'var(--text-secondary)',
-              maxWidth: '680px',
-              margin: '0 auto 2.25rem',
-              fontStyle: 'italic',
-            }}
-          >
-            "Emerging Technologies and Interdisciplinary Innovations for a Sustainable Future"
-          </p>
-
-          <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '1rem', marginBottom: '3rem' }}>
-            <Link to="/register" className="btn btn-primary btn-lg">
-              <span>Register for Conference</span>
-              <ArrowRight size={18} />
-            </Link>
-            <Link to="/submission" className="btn btn-secondary btn-lg">
-              <span>Submit Abstract</span>
-            </Link>
-            <a
-              href="/downloads/NEXORA_2026_Rulebook.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn btn-outline btn-lg"
+        >
+          <div style={{ flex: '1 1 500px', textAlign: 'left' }}>
+            <p
+              className="eyebrow"
+              style={{
+                color: 'var(--accent-cream)',
+                fontSize: '0.9rem',
+                letterSpacing: '0.08em',
+                marginBottom: '0.5rem',
+              }}
             >
-              <BookOpen size={18} />
-              <span>Rulebook (PDF)</span>
-            </a>
+              Welcome to
+            </p>
+
+            <h1
+              style={{
+                fontFamily: 'var(--font-display)',
+                fontSize: 'clamp(2.5rem, 5vw, 3.8rem)',
+                color: '#ffffff',
+                margin: '0 0 0.75rem',
+                lineHeight: 1.15,
+                letterSpacing: '-0.02em',
+              }}
+            >
+              <span style={{ color: 'var(--accent-teal-light)' }}>NEXORA</span>{' '}
+              <span style={{ fontWeight: 400 }}>2026</span>
+            </h1>
+
+            <p
+              style={{
+                color: 'var(--accent-cream)',
+                fontSize: '1rem',
+                fontWeight: 600,
+                textTransform: 'uppercase',
+                letterSpacing: '0.06em',
+                margin: '0 0 1rem',
+              }}
+            >
+              Emerging Technology & Interdisciplinary Innovation Student Conference
+            </p>
+
+            <p
+              style={{
+                fontSize: '1.15rem',
+                color: '#C3DEDC',
+                maxWidth: '540px',
+                margin: '0 0 2rem',
+                fontStyle: 'italic',
+                lineHeight: 1.6,
+              }}
+            >
+              "Emerging Technologies and Interdisciplinary Innovations for a Sustainable Future"
+            </p>
+
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', alignItems: 'center' }}>
+              <Link
+                to="/register"
+                className="btn"
+                style={{
+                  background: 'var(--accent-cream)',
+                  color: 'var(--dark-teal)',
+                  fontWeight: 700,
+                  boxShadow: '0 4px 14px rgba(0,0,0,0.25)',
+                  border: 'none',
+                }}
+              >
+                <span>Register Now →</span>
+              </Link>
+              <Link
+                to="/submission"
+                className="btn btn-outline"
+                style={{
+                  borderColor: 'rgba(255, 255, 255, 0.4)',
+                  color: '#ffffff',
+                }}
+              >
+                <span>Submit Abstract</span>
+              </Link>
+              <a
+                href="/downloads/NEXORA_2026_Rulebook.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  color: '#ffffff',
+                  fontSize: '0.95rem',
+                  textDecoration: 'underline',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '0.35rem',
+                  marginLeft: '0.5rem',
+                }}
+              >
+                <BookOpen size={16} /> View Rulebook
+              </a>
+            </div>
           </div>
 
-          {/* Quick Metrics Cards */}
-          <div className="grid-3" style={{ textAlign: 'left' }}>
-            <div className="card" style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '1.25rem' }}>
-              <div style={{ background: 'rgba(45, 212, 191, 0.15)', color: 'var(--accent-teal-light)', padding: '0.75rem', borderRadius: 'var(--radius-md)' }}>
-                <Calendar size={28} />
-              </div>
-              <div>
-                <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)', textTransform: 'uppercase', fontWeight: 600 }}>Conference Date</p>
-                <h4 style={{ margin: 0, fontSize: '1.1rem' }}>14 October 2026</h4>
-              </div>
-            </div>
-
-            <div className="card" style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '1.25rem' }}>
-              <div style={{ background: 'rgba(245, 158, 11, 0.15)', color: 'var(--accent-amber)', padding: '0.75rem', borderRadius: 'var(--radius-md)' }}>
-                <MapPin size={28} />
-              </div>
-              <div>
-                <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)', textTransform: 'uppercase', fontWeight: 600 }}>Venue Location</p>
-                <h4 style={{ margin: 0, fontSize: '1.1rem' }}>APJ Abdul Kalam Auditorium</h4>
-              </div>
-            </div>
-
-            <div className="card" style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '1.25rem' }}>
-              <div style={{ background: 'rgba(16, 185, 129, 0.15)', color: 'var(--status-success)', padding: '0.75rem', borderRadius: 'var(--radius-md)' }}>
-                <Award size={28} />
-              </div>
-              <div>
-                <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)', textTransform: 'uppercase', fontWeight: 600 }}>Registration Fee</p>
-                <h4 style={{ margin: 0, fontSize: '1.1rem' }}>₹{config?.registrationFee || 100} / participant</h4>
-              </div>
-            </div>
+          {/* Hero Decorative SVG Graphic from original starter */}
+          <div
+            style={{
+              flex: '0 0 300px',
+              width: '300px',
+              height: '300px',
+              opacity: 0.85,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+            aria-hidden="true"
+          >
+            <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" style={{ width: '100%', height: '100%' }}>
+              <circle cx="150" cy="150" r="90" fill="none" stroke="#24B1B1" strokeWidth="1.5" />
+              <circle cx="150" cy="150" r="60" fill="none" stroke="#FFE2AF" strokeWidth="1.5" />
+              <line x1="150" y1="150" x2="230" y2="90" stroke="#24B1B1" strokeWidth="1.5" />
+              <line x1="150" y1="150" x2="70" y2="80" stroke="#24B1B1" strokeWidth="1.5" />
+              <line x1="150" y1="150" x2="220" y2="230" stroke="#FFE2AF" strokeWidth="1.5" />
+              <line x1="150" y1="150" x2="60" y2="220" stroke="#24B1B1" strokeWidth="1.5" />
+              <circle cx="150" cy="150" r="8" fill="#FFE2AF" />
+              <circle cx="230" cy="90" r="6" fill="#24B1B1" />
+              <circle cx="70" cy="80" r="5" fill="#24B1B1" />
+              <circle cx="220" cy="230" r="6" fill="#FFE2AF" />
+              <circle cx="60" cy="220" r="5" fill="#24B1B1" />
+            </svg>
           </div>
         </div>
       </section>
 
       {/* ================= ABOUT THE EVENT ================= */}
-      <section className="container" style={{ padding: '5rem 1.5rem' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '3rem', alignItems: 'center' }}>
-          <div>
-            <div className="eyebrow">
-              <span className="eyebrow-dot" />
-              <span>About NEXORA</span>
+      <section className="container" style={{ paddingTop: '4.5rem', paddingBottom: '4.5rem' }}>
+        <div style={{ maxWidth: '820px', margin: '0 auto', textAlign: 'center', marginBottom: '3rem' }}>
+          <p className="eyebrow">About Us</p>
+          <h2 style={{ fontSize: '2.4rem', margin: '0.5rem 0 1.25rem' }}>
+            Transforming <span className="heading-accent">Ideas into Research</span>
+          </h2>
+          <p style={{ fontSize: '1.05rem', lineHeight: 1.7, marginBottom: '1rem' }}>
+            NEXORA – Emerging Technology and Interdisciplinary Innovation Conference 2026 is an academic research conference
+            organized to provide undergraduate and postgraduate students with a premier platform to explore, develop, and present
+            cutting-edge solutions across emerging technological domains.
+          </p>
+          <p style={{ fontSize: '1rem', lineHeight: 1.7, color: 'var(--text-secondary)' }}>
+            The conference encourages students to go beyond standard coursework through peer-reviewed research, scientific rigor,
+            and presentation before eminent academic panels.
+          </p>
+        </div>
+
+        {/* 3 Quick Info Metric Cards */}
+        <div className="grid-3" style={{ marginBottom: '3.5rem' }}>
+          <div className="card" style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '1.5rem' }}>
+            <div style={{ background: 'var(--accent-soft)', color: 'var(--accent-teal)', padding: '0.85rem', borderRadius: 'var(--radius-md)' }}>
+              <Calendar size={28} />
             </div>
-            <h2 style={{ marginBottom: '1.25rem' }}>
-              Fostering Scholarly Inquiry & <span className="heading-gradient">Technical Innovation</span>
-            </h2>
-            <p style={{ marginBottom: '1rem' }}>
-              NEXORA 2026 is an academic research conference dedicated to providing undergraduate and postgraduate
-              students a premier forum to explore, develop, and present high-impact solutions to contemporary technological challenges.
-            </p>
-            <p style={{ marginBottom: '1.75rem' }}>
-              Unlike typical classroom competitions, NEXORA guides participants through structured scientific stages: initial abstract and poster screening by review committees, followed by final oral presentations before distinguished evaluation panels.
-            </p>
-            <Link to="/about" className="btn btn-outline">
-              <span>Read Full Mission & Objectives</span>
-              <ArrowRight size={16} />
-            </Link>
+            <div>
+              <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)', textTransform: 'uppercase', fontWeight: 700, margin: 0 }}>
+                Conference Day
+              </p>
+              <h4 style={{ margin: '0.2rem 0 0', fontSize: '1.2rem', color: 'var(--text-primary)' }}>14 Oct 2026</h4>
+            </div>
           </div>
 
-          <div className="card" style={{ border: '1px solid rgba(45, 212, 191, 0.25)', padding: '2rem' }}>
-            <h3 style={{ marginBottom: '1rem', color: 'var(--accent-cream)' }}>Key Highlights</h3>
-            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
-              {[
-                'Peer-reviewed abstract & poster screening',
-                'Comprehensive 5 research tracks covering modern computing & sustainability',
-                'Constructive feedback from senior academic faculty and industry experts',
-                'Certificate of Presentation and merit awards for outstanding research',
-                'Selected high-scoring papers shortlisted for conference proceedings',
-              ].map((item, idx) => (
-                <li key={idx} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem' }}>
-                  <CheckCircle size={18} color="var(--accent-teal-light)" style={{ flexShrink: 0, marginTop: '3px' }} />
-                  <span style={{ fontSize: '0.95rem' }}>{item}</span>
-                </li>
-              ))}
-            </ul>
+          <div className="card" style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '1.5rem' }}>
+            <div style={{ background: 'var(--status-pending-bg)', color: 'var(--accent-amber)', padding: '0.85rem', borderRadius: 'var(--radius-md)' }}>
+              <MapPin size={28} />
+            </div>
+            <div>
+              <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)', textTransform: 'uppercase', fontWeight: 700, margin: 0 }}>
+                Venue
+              </p>
+              <h4 style={{ margin: '0.2rem 0 0', fontSize: '1.15rem', color: 'var(--text-primary)' }}>APJ Abdul Kalam Auditorium</h4>
+            </div>
+          </div>
+
+          <div className="card" style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '1.5rem' }}>
+            <div style={{ background: 'var(--status-success-bg)', color: 'var(--status-success)', padding: '0.85rem', borderRadius: 'var(--radius-md)' }}>
+              <Award size={28} />
+            </div>
+            <div>
+              <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)', textTransform: 'uppercase', fontWeight: 700, margin: 0 }}>
+                Registration Fee
+              </p>
+              <h4 style={{ margin: '0.2rem 0 0', fontSize: '1.2rem', color: 'var(--text-primary)' }}>
+                ₹{config?.registrationFee || 100} / participant
+              </h4>
+            </div>
+          </div>
+        </div>
+
+        {/* Highlights List Card */}
+        <div className="card" style={{ border: '1px solid var(--border)', padding: '2.25rem' }}>
+          <h3 style={{ marginBottom: '1.25rem', color: 'var(--dark-teal)' }}>Conference Highlights</h3>
+          <div className="grid-2">
+            {[
+              'Structured scientific stages: Abstract & Poster screening followed by oral defense',
+              'Five multidisciplinary tracks encompassing modern computing and sustainability',
+              'Detailed constructive critique from experienced academicians and research supervisors',
+              'Official Certificates of Presentation and Merit Awards for top research works',
+              'Selected high-scoring research papers recommended for proceedings publication',
+              'Networking forum connecting promising student innovators across regional institutions',
+            ].map((item, idx) => (
+              <div key={idx} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem' }}>
+                <CheckCircle size={18} color="var(--accent-teal)" style={{ flexShrink: 0, marginTop: '3px' }} />
+                <span style={{ fontSize: '0.95rem', color: 'var(--text-primary)' }}>{item}</span>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* ================= HOST INSTITUTION & CLUBS ================= */}
-      <section style={{ background: 'var(--bg-secondary)', borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)', padding: '5rem 1.5rem' }}>
+      <section style={{ background: 'var(--bg-secondary)', borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)', padding: '4.5rem 1.5rem' }}>
         <div className="container">
-          <div style={{ textAlign: 'center', maxWidth: '750px', margin: '0 auto 3.5rem' }}>
-            <div className="eyebrow">
-              <span className="eyebrow-dot" />
-              <span>Host Institution</span>
-            </div>
-            <h2>Hindustan College of <span className="heading-gradient">Science & Technology</span></h2>
-            <p style={{ marginTop: '0.75rem' }}>
-              A NAAC A+ accredited institution under the Sharda Group, Farah, Mathura. Established in 1996 among the first self-financed engineering colleges in North India, affiliated with AKTU Lucknow and approved by AICTE.
+          <div style={{ textAlign: 'center', maxWidth: '750px', margin: '0 auto 3rem' }}>
+            <p className="eyebrow">Host Institution</p>
+            <h2 style={{ fontSize: '2.2rem', margin: '0.4rem 0 0.8rem' }}>
+              Hindustan College of <span className="heading-accent">Science & Technology</span>
+            </h2>
+            <p style={{ color: 'var(--text-secondary)' }}>
+              A NAAC A+ accredited institution under the Sharda Group, Farah, Mathura. Established in 1996 among the first
+              self-financed engineering colleges in North India, affiliated with AKTU Lucknow and approved by AICTE.
             </p>
           </div>
 
@@ -185,17 +268,18 @@ export default function Home() {
                 <img
                   src="/images/byte-logo.png"
                   alt="Byte Club"
-                  style={{ width: '56px', height: '56px', borderRadius: '12px', background: '#fff', padding: '4px' }}
+                  style={{ width: '56px', height: '56px', borderRadius: '12px', background: '#fff', border: '1px solid var(--border)', padding: '4px' }}
                 />
                 <div>
-                  <h3 style={{ margin: 0 }}>BYTE CLUB</h3>
-                  <p style={{ fontSize: '0.85rem', color: 'var(--accent-teal-light)', fontWeight: 600 }}>CSE Department Society</p>
+                  <h3 style={{ margin: 0, color: 'var(--text-primary)' }}>BYTE CLUB</h3>
+                  <p style={{ fontSize: '0.85rem', color: 'var(--accent-teal)', fontWeight: 600 }}>CSE Department Society</p>
                 </div>
               </div>
-              <p style={{ flex: 1, marginBottom: '1rem' }}>
-                BYTE Club is the Computer Science & Engineering student society at HCST, committed to technical excellence, hackathons, open-source development, algorithmic problem-solving, and career preparedness.
+              <p style={{ flex: 1, marginBottom: '1rem', color: 'var(--text-secondary)' }}>
+                BYTE Club is the Computer Science & Engineering student society at HCST, committed to technical excellence,
+                coding bootcamps, open-source development, and research mentorship.
               </p>
-              <p style={{ fontSize: '0.85rem', color: 'var(--accent-cream)', fontStyle: 'italic' }}>
+              <p style={{ fontSize: '0.85rem', color: 'var(--accent-teal)', fontWeight: 600, fontStyle: 'italic', margin: 0 }}>
                 Faculty Coordinator: Mr. Gaurav Pandey
               </p>
             </div>
@@ -205,17 +289,18 @@ export default function Home() {
                 <img
                   src="/images/qubit-logo.jpeg"
                   alt="Qubit Society"
-                  style={{ width: '56px', height: '56px', borderRadius: '12px', background: '#fff', padding: '4px' }}
+                  style={{ width: '56px', height: '56px', borderRadius: '12px', background: '#fff', border: '1px solid var(--border)', padding: '4px' }}
                 />
                 <div>
-                  <h3 style={{ margin: 0 }}>QUBIT TECH SOCIETY</h3>
-                  <p style={{ fontSize: '0.85rem', color: 'var(--accent-teal-light)', fontWeight: 600 }}>IT Department Society</p>
+                  <h3 style={{ margin: 0, color: 'var(--text-primary)' }}>QUBIT TECH SOCIETY</h3>
+                  <p style={{ fontSize: '0.85rem', color: 'var(--accent-teal)', fontWeight: 600 }}>IT Department Society</p>
                 </div>
               </div>
-              <p style={{ flex: 1, marginBottom: '1rem' }}>
-                QUBIT is the Information Technology Association at HCST, focused on practical IT competencies, cloud architectures, network defense, student workshops, and emerging technologies.
+              <p style={{ flex: 1, marginBottom: '1rem', color: 'var(--text-secondary)' }}>
+                QUBIT is the Information Technology Association at HCST, driving practical IT competencies, cloud architectures,
+                student research symposiums, and cybersecurity literacy.
               </p>
-              <p style={{ fontSize: '0.85rem', color: 'var(--accent-cream)', fontStyle: 'italic' }}>
+              <p style={{ fontSize: '0.85rem', color: 'var(--accent-teal)', fontWeight: 600, fontStyle: 'italic', margin: 0 }}>
                 Faculty Coordinator: Mr. Utkarsh Gupta
               </p>
             </div>
@@ -224,14 +309,13 @@ export default function Home() {
       </section>
 
       {/* ================= RESEARCH TRACKS ================= */}
-      <section className="container" style={{ padding: '5rem 1.5rem' }}>
+      <section className="container" style={{ paddingTop: '4.5rem', paddingBottom: '4.5rem' }}>
         <div style={{ textAlign: 'center', maxWidth: '750px', margin: '0 auto 3rem' }}>
-          <div className="eyebrow">
-            <span className="eyebrow-dot" />
-            <span>Research Domains</span>
-          </div>
-          <h2>Explore the 5 <span className="heading-gradient">Conference Tracks</span></h2>
-          <p>
+          <p className="eyebrow">Research Domains</p>
+          <h2 style={{ fontSize: '2.2rem', margin: '0.4rem 0 0.8rem' }}>
+            Explore the 5 <span className="heading-accent">Conference Tracks</span>
+          </h2>
+          <p style={{ color: 'var(--text-secondary)' }}>
             Select from our multidisciplinary conference tracks designed to welcome both specialized and cross-domain student research papers.
           </p>
         </div>
@@ -266,10 +350,10 @@ export default function Home() {
           ].map((track, idx) => (
             <div key={idx} className="card" style={{ display: 'flex', flexDirection: 'column' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem' }}>
-                <h3 style={{ margin: 0 }}>{track.title}</h3>
+                <h3 style={{ margin: 0, color: 'var(--text-primary)' }}>{track.title}</h3>
                 <span className="badge badge-info">{track.badge}</span>
               </div>
-              <p style={{ flex: 1 }}>{track.desc}</p>
+              <p style={{ flex: 1, color: 'var(--text-secondary)' }}>{track.desc}</p>
             </div>
           ))}
 
@@ -282,12 +366,14 @@ export default function Home() {
               alignItems: 'center',
               textAlign: 'center',
               border: '2px dashed var(--accent-teal)',
-              background: 'rgba(45, 212, 191, 0.05)',
+              background: 'var(--accent-soft)',
             }}
           >
-            <Sparkles size={32} color="var(--accent-teal-light)" style={{ marginBottom: '0.75rem' }} />
-            <h3 style={{ marginBottom: '0.5rem' }}>Ready to Submit?</h3>
-            <p style={{ fontSize: '0.85rem', marginBottom: '1.25rem' }}>Review full track specifications and sample topics.</p>
+            <Sparkles size={32} color="var(--accent-teal)" style={{ marginBottom: '0.75rem' }} />
+            <h3 style={{ marginBottom: '0.4rem', color: 'var(--text-primary)' }}>Detailed Guidelines</h3>
+            <p style={{ fontSize: '0.85rem', marginBottom: '1.25rem', color: 'var(--text-secondary)' }}>
+              Check full scope, formatting instructions, and rules.
+            </p>
             <Link to="/tracks" className="btn btn-outline btn-sm">
               View All Tracks
             </Link>
@@ -296,58 +382,59 @@ export default function Home() {
       </section>
 
       {/* ================= TIMELINE & STAGES ================= */}
-      <section style={{ background: 'var(--bg-secondary)', borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)', padding: '5rem 1.5rem' }}>
+      <section style={{ background: 'var(--bg-secondary)', borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)', padding: '4.5rem 1.5rem' }}>
         <div className="container">
-          <div style={{ textAlign: 'center', maxWidth: '750px', margin: '0 auto 3.5rem' }}>
-            <div className="eyebrow">
-              <span className="eyebrow-dot" />
-              <span>Key Milestones</span>
-            </div>
-            <h2>Stages & <span className="heading-gradient">Timeline</span></h2>
-            <p>Ensure your submission and registrations are finalized ahead of the respective deadlines.</p>
+          <div style={{ textAlign: 'center', maxWidth: '750px', margin: '0 auto 3rem' }}>
+            <p className="eyebrow">Key Milestones</p>
+            <h2 style={{ fontSize: '2.2rem', margin: '0.4rem 0 0.8rem' }}>
+              Stages & <span className="heading-accent">Timeline</span>
+            </h2>
+            <p style={{ color: 'var(--text-secondary)' }}>
+              Ensure your submissions and registrations are finalized ahead of the respective deadlines.
+            </p>
           </div>
 
           <div className="grid-4">
             <div className="card">
               <span className="badge badge-pending" style={{ marginBottom: '0.75rem' }}>Round 1</span>
-              <h4>Abstract & Poster</h4>
-              <p style={{ color: 'var(--accent-cream)', fontWeight: 600, fontSize: '0.9rem', margin: '0.25rem 0 0.5rem' }}>
+              <h4 style={{ margin: '0 0 0.25rem', color: 'var(--text-primary)' }}>Abstract & Poster</h4>
+              <p style={{ color: 'var(--accent-orange)', fontWeight: 700, fontSize: '0.9rem', margin: '0.25rem 0 0.5rem' }}>
                 {formatIST(config?.submissionDeadline || '2026-09-30T18:29:59.000Z')}
               </p>
-              <p style={{ fontSize: '0.85rem' }}>
+              <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', margin: 0 }}>
                 All registered teams submit their 150-word abstract & research poster across their chosen track.
               </p>
             </div>
 
             <div className="card">
               <span className="badge badge-info" style={{ marginBottom: '0.75rem' }}>Screening</span>
-              <h4>Acceptance Notice</h4>
-              <p style={{ color: 'var(--accent-cream)', fontWeight: 600, fontSize: '0.9rem', margin: '0.25rem 0 0.5rem' }}>
+              <h4 style={{ margin: '0 0 0.25rem', color: 'var(--text-primary)' }}>Acceptance Notice</h4>
+              <p style={{ color: 'var(--accent-orange)', fontWeight: 700, fontSize: '0.9rem', margin: '0.25rem 0 0.5rem' }}>
                 08 October 2026
               </p>
-              <p style={{ fontSize: '0.85rem' }}>
+              <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', margin: 0 }}>
                 Shortlisted participants receive acceptance emails and instructions for final presentations.
               </p>
             </div>
 
             <div className="card">
               <span className="badge badge-pending" style={{ marginBottom: '0.75rem' }}>Round 2</span>
-              <h4>Paper Submission</h4>
-              <p style={{ color: 'var(--accent-cream)', fontWeight: 600, fontSize: '0.9rem', margin: '0.25rem 0 0.5rem' }}>
+              <h4 style={{ margin: '0 0 0.25rem', color: 'var(--text-primary)' }}>Paper Submission</h4>
+              <p style={{ color: 'var(--accent-orange)', fontWeight: 700, fontSize: '0.9rem', margin: '0.25rem 0 0.5rem' }}>
                 12 October 2026
               </p>
-              <p style={{ fontSize: '0.85rem' }}>
+              <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', margin: 0 }}>
                 Shortlisted authors upload complete research papers ahead of the evaluation committee review.
               </p>
             </div>
 
             <div className="card" style={{ borderColor: 'var(--accent-teal)' }}>
               <span className="badge badge-success" style={{ marginBottom: '0.75rem' }}>Final Day</span>
-              <h4>Conference Day</h4>
-              <p style={{ color: 'var(--accent-teal-light)', fontWeight: 600, fontSize: '0.9rem', margin: '0.25rem 0 0.5rem' }}>
+              <h4 style={{ margin: '0 0 0.25rem', color: 'var(--text-primary)' }}>Conference Day</h4>
+              <p style={{ color: 'var(--accent-teal)', fontWeight: 700, fontSize: '0.9rem', margin: '0.25rem 0 0.5rem' }}>
                 14 October 2026
               </p>
-              <p style={{ fontSize: '0.85rem' }}>
+              <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', margin: 0 }}>
                 Live research presentations, keynote lectures, evaluation panels, and prize distributions.
               </p>
             </div>
@@ -356,14 +443,13 @@ export default function Home() {
       </section>
 
       {/* ================= LEADERSHIP SECTION ================= */}
-      <section className="container" style={{ padding: '5rem 1.5rem' }}>
-        <div style={{ textAlign: 'center', maxWidth: '750px', margin: '0 auto 3.5rem' }}>
-          <div className="eyebrow">
-            <span className="eyebrow-dot" />
-            <span>Honorable Mentors</span>
-          </div>
-          <h2>The People Behind <span className="heading-gradient">NEXORA 2026</span></h2>
-          <p>
+      <section className="container" style={{ paddingTop: '4.5rem', paddingBottom: '4.5rem' }}>
+        <div style={{ textAlign: 'center', maxWidth: '750px', margin: '0 auto 3rem' }}>
+          <p className="eyebrow">Honorable Mentors</p>
+          <h2 style={{ fontSize: '2.2rem', margin: '0.4rem 0 0.8rem' }}>
+            The People Behind <span className="heading-accent">NEXORA 2026</span>
+          </h2>
+          <p style={{ color: 'var(--text-secondary)' }}>
             Guided by visionary leadership committed to nurturing scientific curiosity and academic excellence.
           </p>
         </div>
@@ -388,7 +474,7 @@ export default function Home() {
                   overflow: 'hidden',
                   flexShrink: 0,
                   border: '2px solid var(--accent-teal)',
-                  background: 'var(--bg-secondary)',
+                  background: 'var(--accent-soft)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -400,13 +486,17 @@ export default function Home() {
                   style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                   onError={(e) => {
                     e.target.style.display = 'none';
-                    e.target.parentElement.innerHTML = `<span style="font-weight:700; color:var(--accent-teal-light); font-size:1.1rem">${leader.name.slice(0, 2)}</span>`;
+                    e.target.parentElement.innerHTML = `<span style="font-weight:700; color:var(--accent-teal); font-size:1.1rem">${leader.name.slice(0, 2)}</span>`;
                   }}
                 />
               </div>
               <div>
-                <h4 style={{ margin: '0 0 0.25rem', fontSize: '1.05rem', color: '#fff' }}>{leader.name}</h4>
-                <p style={{ margin: 0, fontSize: '0.85rem', color: 'var(--accent-cream)' }}>{leader.role}</p>
+                <h4 style={{ margin: '0 0 0.25rem', fontSize: '1.05rem', color: 'var(--text-primary)' }}>
+                  {leader.name}
+                </h4>
+                <p style={{ margin: 0, fontSize: '0.85rem', color: 'var(--accent-teal)', fontWeight: 500 }}>
+                  {leader.role}
+                </p>
               </div>
             </div>
           ))}
@@ -414,26 +504,44 @@ export default function Home() {
       </section>
 
       {/* ================= CALL TO ACTION ================= */}
-      <section className="container" style={{ paddingBottom: '5rem' }}>
+      <section className="container" style={{ paddingBottom: '4.5rem' }}>
         <div
           className="card"
           style={{
-            background: 'linear-gradient(135deg, rgba(10, 46, 46, 0.95) 0%, rgba(5, 25, 25, 0.95) 100%)',
-            border: '1px solid var(--accent-teal)',
+            background: 'var(--dark-teal)',
+            color: '#ffffff',
+            border: 'none',
             padding: '3.5rem 2rem',
             textAlign: 'center',
-            boxShadow: 'var(--shadow-glow)',
+            boxShadow: 'var(--shadow-md)',
+            borderRadius: 'var(--radius-xl)',
           }}
         >
-          <h2 style={{ marginBottom: '1rem' }}>Be Part of NEXORA 2026</h2>
-          <p style={{ maxWidth: '600px', margin: '0 auto 2rem', fontSize: '1.1rem' }}>
+          <h2 style={{ marginBottom: '1rem', color: '#ffffff' }}>Be Part of NEXORA 2026</h2>
+          <p style={{ maxWidth: '600px', margin: '0 auto 2rem', fontSize: '1.05rem', color: '#C3DEDC' }}>
             Register your team today, submit your abstract before the deadline, and present your work to an esteemed academic audience.
           </p>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap' }}>
-            <Link to="/register" className="btn btn-primary btn-lg">
+            <Link
+              to="/register"
+              className="btn btn-primary btn-lg"
+              style={{
+                background: 'var(--accent-cream)',
+                color: 'var(--dark-teal) !important',
+                border: 'none',
+                fontWeight: 700,
+              }}
+            >
               Register Now →
             </Link>
-            <Link to="/guidelines" className="btn btn-outline btn-lg">
+            <Link
+              to="/guidelines"
+              className="btn btn-outline btn-lg"
+              style={{
+                borderColor: 'rgba(255, 255, 255, 0.4)',
+                color: '#ffffff',
+              }}
+            >
               View Guidelines
             </Link>
           </div>

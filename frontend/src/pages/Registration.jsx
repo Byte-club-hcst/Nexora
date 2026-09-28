@@ -151,11 +151,11 @@ export default function Registration() {
           >
             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem' }}>
               <span style={{ color: 'var(--text-muted)' }}>Registered Name:</span>
-              <strong style={{ color: '#fff' }}>{existingRegistration.name}</strong>
+              <strong style={{ color: 'var(--text-primary)' }}>{existingRegistration.name}</strong>
             </div>
             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem' }}>
               <span style={{ color: 'var(--text-muted)' }}>Registered Email:</span>
-              <strong style={{ color: '#fff' }}>{existingRegistration.email}</strong>
+              <strong style={{ color: 'var(--text-primary)' }}>{existingRegistration.email}</strong>
             </div>
             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem' }}>
               <span style={{ color: 'var(--text-muted)' }}>Payment Status:</span>
@@ -190,7 +190,7 @@ export default function Registration() {
         <h1 style={{ marginBottom: '0.5rem' }}>
           Conference <span className="heading-gradient">Registration</span>
         </h1>
-        <p style={{ marginBottom: '2rem' }}>
+        <p style={{ marginBottom: '2rem', color: 'var(--text-secondary)' }}>
           Registration fee is ₹{config?.registrationFee || 100} per participant. Complete the form below to initiate your registration.
         </p>
 
@@ -203,8 +203,8 @@ export default function Registration() {
               padding: '0.85rem',
               borderRadius: 'var(--radius-md)',
               background: 'var(--status-error-bg)',
-              border: '1px solid rgba(239, 68, 68, 0.3)',
-              color: '#f87171',
+              border: '1px solid rgba(179, 38, 30, 0.3)',
+              color: 'var(--status-error)',
               fontSize: '0.875rem',
               marginBottom: '1.5rem',
             }}
@@ -233,9 +233,9 @@ export default function Registration() {
               disabled
               className="form-input"
               value={currentUser.email}
-              style={{ opacity: 0.7, cursor: 'not-allowed', background: 'rgba(0,0,0,0.4)' }}
+              style={{ opacity: 0.8, cursor: 'not-allowed', background: 'var(--bg-secondary)', color: 'var(--text-primary)' }}
             />
-            <span style={{ fontSize: '0.78rem', color: 'var(--accent-teal-light)', marginTop: '0.25rem', display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
+            <span style={{ fontSize: '0.78rem', color: 'var(--accent-teal)', marginTop: '0.25rem', display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
               <ShieldCheck size={14} /> Verified Firebase Identity Token
             </span>
           </div>

@@ -54,8 +54,8 @@ export default function OrganizingTeam() {
                 onError={(e) => { e.target.style.display = 'none'; }}
               />
               <div>
-                <h4 style={{ margin: '0 0 0.2rem', color: '#fff' }}>{leader.name}</h4>
-                <p style={{ margin: 0, fontSize: '0.85rem', color: 'var(--accent-teal-light)', fontWeight: 600 }}>{leader.role}</p>
+                <h4 style={{ margin: '0 0 0.2rem', color: 'var(--text-primary)' }}>{leader.name}</h4>
+                <p style={{ margin: 0, fontSize: '0.85rem', color: 'var(--accent-teal)', fontWeight: 600 }}>{leader.role}</p>
                 <p style={{ margin: 0, fontSize: '0.78rem', color: 'var(--text-muted)' }}>{leader.designation}</p>
               </div>
             </div>
@@ -63,7 +63,7 @@ export default function OrganizingTeam() {
         </div>
 
         {/* Faculty Conveners */}
-        <h2 style={{ fontSize: '1.5rem', color: 'var(--accent-cream)', marginBottom: '1.5rem' }}>
+        <h2 style={{ fontSize: '1.5rem', color: 'var(--dark-teal)', marginBottom: '1.5rem' }}>
           Department Chairs & Faculty Coordinators
         </h2>
         <div className="grid-2" style={{ marginBottom: '3.5rem' }}>
@@ -76,8 +76,8 @@ export default function OrganizingTeam() {
                 onError={(e) => { e.target.style.display = 'none'; }}
               />
               <div>
-                <h3 style={{ margin: '0 0 0.25rem', fontSize: '1.2rem', color: '#fff' }}>{leader.name}</h3>
-                <p style={{ margin: 0, fontSize: '0.9rem', color: 'var(--accent-teal-light)', fontWeight: 600 }}>{leader.role}</p>
+                <h3 style={{ margin: '0 0 0.25rem', fontSize: '1.2rem', color: 'var(--text-primary)' }}>{leader.name}</h3>
+                <p style={{ margin: 0, fontSize: '0.9rem', color: 'var(--accent-teal)', fontWeight: 600 }}>{leader.role}</p>
                 <p style={{ margin: 0, fontSize: '0.825rem', color: 'var(--text-secondary)' }}>{leader.designation}</p>
               </div>
             </div>
@@ -85,17 +85,17 @@ export default function OrganizingTeam() {
         </div>
 
         {/* Student Organizing Committee */}
-        <h2 style={{ fontSize: '1.5rem', color: 'var(--accent-cream)', marginBottom: '1.5rem' }}>
+        <h2 style={{ fontSize: '1.5rem', color: 'var(--dark-teal)', marginBottom: '1.5rem' }}>
           Student Core Committee
         </h2>
         <div className="grid-3">
           {studentCoordinators.map((stud, idx) => (
             <div key={idx} className="card" style={{ padding: '1.5rem' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '0.5rem' }}>
-                <h4 style={{ margin: 0, color: '#fff' }}>{stud.name}</h4>
+                <h4 style={{ margin: 0, color: 'var(--text-primary)' }}>{stud.name}</h4>
                 <span className="badge badge-info">{stud.club}</span>
               </div>
-              <p style={{ fontSize: '0.85rem', color: 'var(--accent-teal-light)', fontWeight: 600, margin: '0 0 0.25rem' }}>
+              <p style={{ fontSize: '0.85rem', color: 'var(--accent-teal)', fontWeight: 600, margin: '0 0 0.25rem' }}>
                 {stud.role}
               </p>
               <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginBottom: '0.75rem' }}>

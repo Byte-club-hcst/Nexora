@@ -20,8 +20,8 @@ export default function NotFound() {
           width: '80px',
           height: '80px',
           borderRadius: '50%',
-          background: 'rgba(45, 212, 191, 0.15)',
-          color: 'var(--accent-teal-light)',
+          background: 'var(--accent-soft)',
+          color: 'var(--accent-teal)',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
@@ -30,10 +30,10 @@ export default function NotFound() {
       >
         <Compass size={40} />
       </div>
-      <h1 style={{ fontSize: '4rem', fontWeight: 900, margin: 0, color: 'var(--accent-teal-light)' }}>
+      <h1 style={{ fontSize: '4rem', fontWeight: 900, margin: 0, color: 'var(--accent-teal)' }}>
         404
       </h1>
-      <h2 style={{ fontSize: '1.75rem', marginBottom: '1rem', color: '#fff' }}>
+      <h2 style={{ fontSize: '1.75rem', marginBottom: '1rem', color: 'var(--text-primary)' }}>
         Page Not Found
       </h2>
       <p style={{ maxWidth: '460px', marginBottom: '2.5rem', fontSize: '1.05rem', color: 'var(--text-secondary)' }}>

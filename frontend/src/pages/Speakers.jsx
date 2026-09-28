@@ -57,8 +57,8 @@ export default function Speakers() {
                     width: '56px',
                     height: '56px',
                     borderRadius: '50%',
-                    background: 'rgba(45, 212, 191, 0.15)',
-                    color: 'var(--accent-teal-light)',
+                    background: 'var(--accent-soft)',
+                    color: 'var(--accent-teal)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -70,15 +70,15 @@ export default function Speakers() {
                   {spk.name.replace(/^(Dr\.|Prof\.)\s*/, '').slice(0, 2)}
                 </div>
                 <div>
-                  <h3 style={{ margin: '0 0 0.2rem', fontSize: '1.2rem', color: '#fff' }}>{spk.name}</h3>
-                  <p style={{ margin: 0, fontSize: '0.85rem', color: 'var(--accent-teal-light)', fontWeight: 600 }}>{spk.role}</p>
+                  <h3 style={{ margin: '0 0 0.2rem', fontSize: '1.2rem', color: 'var(--text-primary)' }}>{spk.name}</h3>
+                  <p style={{ margin: 0, fontSize: '0.85rem', color: 'var(--accent-teal)', fontWeight: 600 }}>{spk.role}</p>
                   <p style={{ margin: 0, fontSize: '0.8rem', color: 'var(--text-muted)' }}>{spk.org}</p>
                 </div>
               </div>
 
               <div style={{ background: 'var(--bg-secondary)', padding: '0.75rem 1rem', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border)', marginBottom: '1rem' }}>
-                <span style={{ fontSize: '0.75rem', textTransform: 'uppercase', color: 'var(--accent-amber)', fontWeight: 700 }}>Keynote Lecture:</span>
-                <p style={{ margin: '0.2rem 0 0', fontSize: '0.875rem', fontWeight: 600, color: 'var(--text-bright)' }}>{spk.topic}</p>
+                <span style={{ fontSize: '0.75rem', textTransform: 'uppercase', color: 'var(--accent-orange)', fontWeight: 700 }}>Keynote Lecture:</span>
+                <p style={{ margin: '0.2rem 0 0', fontSize: '0.875rem', fontWeight: 600, color: 'var(--text-primary)' }}>{spk.topic}</p>
               </div>
 
               <p style={{ fontSize: '0.875rem', color: 'var(--text-secondary)', flex: 1, margin: 0 }}>

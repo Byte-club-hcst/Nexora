@@ -84,10 +84,10 @@ export default function AdminDashboard() {
         <div className="card">
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '0.5rem' }}>
             <span style={{ fontSize: '0.85rem', color: 'var(--text-muted)', textTransform: 'uppercase', fontWeight: 600 }}>Total Registrations</span>
-            <Users size={20} color="var(--accent-teal-light)" />
+            <Users size={20} color="var(--accent-teal)" />
           </div>
-          <h2 style={{ fontSize: '2.2rem', margin: '0.25rem 0', color: '#fff' }}>{stats?.totalRegistrations || 0}</h2>
-          <p style={{ margin: 0, fontSize: '0.8rem', color: 'var(--accent-teal-light)' }}>Registered Delegates</p>
+          <h2 style={{ fontSize: '2.2rem', margin: '0.25rem 0', color: 'var(--text-primary)' }}>{stats?.totalRegistrations || 0}</h2>
+          <p style={{ margin: 0, fontSize: '0.8rem', color: 'var(--accent-teal)' }}>Registered Delegates</p>
         </div>
 
         <div className="card">
@@ -104,9 +104,9 @@ export default function AdminDashboard() {
         <div className="card">
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '0.5rem' }}>
             <span style={{ fontSize: '0.85rem', color: 'var(--text-muted)', textTransform: 'uppercase', fontWeight: 600 }}>Abstract Submissions</span>
-            <FileText size={20} color="var(--accent-cyan)" />
+            <FileText size={20} color="var(--accent-teal)" />
           </div>
-          <h2 style={{ fontSize: '2.2rem', margin: '0.25rem 0', color: '#fff' }}>{stats?.submissions?.total || 0}</h2>
+          <h2 style={{ fontSize: '2.2rem', margin: '0.25rem 0', color: 'var(--text-primary)' }}>{stats?.submissions?.total || 0}</h2>
           <p style={{ margin: 0, fontSize: '0.8rem', color: 'var(--status-success)' }}>
             {stats?.submissions?.accepted || 0} Accepted • {stats?.submissions?.underReview || 0} Under Review
           </p>
@@ -126,7 +126,7 @@ export default function AdminDashboard() {
       <div className="grid-2" style={{ gap: '2rem' }}>
         {/* Track breakdown */}
         <div className="card">
-          <h3 style={{ marginBottom: '1.25rem', color: '#fff' }}>Registration by Track</h3>
+          <h3 style={{ marginBottom: '1.25rem', color: 'var(--dark-teal)' }}>Registration by Track</h3>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
             {Object.entries(stats?.tracks || {}).map(([trackName, count]) => {
               const total = stats?.totalRegistrations || 1;
@@ -135,14 +135,14 @@ export default function AdminDashboard() {
                 <div key={trackName}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.9rem', marginBottom: '0.3rem' }}>
                     <span style={{ color: 'var(--text-primary)', fontWeight: 500 }}>{trackName}</span>
-                    <span style={{ color: 'var(--accent-cream)', fontWeight: 600 }}>{count} ({pct}%)</span>
+                    <span style={{ color: 'var(--accent-teal)', fontWeight: 600 }}>{count} ({pct}%)</span>
                   </div>
                   <div style={{ height: '8px', background: 'var(--bg-secondary)', borderRadius: '4px', overflow: 'hidden' }}>
                     <div
                       style={{
                         height: '100%',
                         width: `${pct}%`,
-                        background: 'linear-gradient(90deg, var(--accent-teal), var(--accent-teal-light))',
+                        background: 'var(--accent-teal)',
                         borderRadius: '4px',
                       }}
                     />
@@ -156,7 +156,7 @@ export default function AdminDashboard() {
         {/* Quick Operations */}
         <div className="card" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
           <div>
-            <h3 style={{ marginBottom: '1.25rem', color: '#fff' }}>Administrative Sections</h3>
+            <h3 style={{ marginBottom: '1.25rem', color: 'var(--dark-teal)' }}>Administrative Sections</h3>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
               <Link
                 to="/admin/participants"
@@ -168,11 +168,11 @@ export default function AdminDashboard() {
                   background: 'var(--bg-secondary)',
                   borderRadius: 'var(--radius-md)',
                   border: '1px solid var(--border)',
-                  color: 'var(--text-bright)',
+                  color: 'var(--text-primary)',
                 }}
               >
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-                  <Users size={18} color="var(--accent-teal-light)" />
+                  <Users size={18} color="var(--accent-teal)" />
                   <span>Participant Database & Profiles</span>
                 </div>
                 <ExternalLink size={16} />

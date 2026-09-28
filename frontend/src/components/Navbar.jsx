@@ -46,16 +46,28 @@ export default function Navbar() {
     navigate('/');
   };
 
+  const navLinks = [
+    { name: 'Home', path: '/' },
+    { name: 'About', path: '/about' },
+    { name: 'Tracks', path: '/tracks' },
+    { name: 'Dates', path: '/important-dates' },
+    { name: 'Guidelines', path: '/guidelines' },
+    { name: 'Speakers', path: '/speakers' },
+    { name: 'Team', path: '/organizing-team' },
+    { name: 'FAQ', path: '/faq' },
+    { name: 'Contact', path: '/contact' },
+  ];
+
   return (
     <header style={{ position: 'sticky', top: 0, zIndex: 1000, width: '100%' }}>
       {/* Top Countdown Banner */}
       <div
         style={{
-          background: 'linear-gradient(90deg, #051a1a 0%, #0a2e2e 50%, #051a1a 100%)',
-          borderBottom: '1px solid var(--border)',
-          padding: '0.45rem 1rem',
+          background: 'var(--dark-teal)',
+          borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
+          padding: '0.45rem 1.25rem',
           fontSize: '0.8rem',
-          color: 'var(--text-secondary)',
+          color: '#ffffff',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
@@ -63,12 +75,21 @@ export default function Navbar() {
           gap: '0.5rem',
         }}
       >
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', margin: '0 auto' }}>
-          <span style={{ display: 'inline-block', width: '8px', height: '8px', borderRadius: '50%', background: 'var(--accent-amber)', boxShadow: '0 0 8px var(--accent-amber)' }} />
-          <span style={{ fontWeight: 600, color: 'var(--accent-cream)', letterSpacing: '0.05em' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem', margin: '0 auto' }}>
+          <span
+            style={{
+              display: 'inline-block',
+              width: '8px',
+              height: '8px',
+              borderRadius: '50%',
+              background: 'var(--accent-orange)',
+              boxShadow: '0 0 8px var(--accent-orange)',
+            }}
+          />
+          <span style={{ fontWeight: 600, color: 'var(--accent-cream)', letterSpacing: '0.04em' }}>
             ABSTRACT SUBMISSION DEADLINE:
           </span>
-          <div style={{ display: 'inline-flex', gap: '0.35rem', fontWeight: 700, color: '#ffffff', fontFamily: 'monospace' }}>
+          <div style={{ display: 'inline-flex', gap: '0.4rem', fontWeight: 700, color: '#ffffff', fontFamily: 'monospace' }}>
             <span>{String(timeLeft.days).padStart(2, '0')}d</span> :
             <span>{String(timeLeft.hours).padStart(2, '0')}h</span> :
             <span>{String(timeLeft.minutes).padStart(2, '0')}m</span> :
@@ -80,10 +101,12 @@ export default function Navbar() {
       {/* Main Navigation Bar */}
       <nav
         style={{
-          background: 'rgba(7, 22, 22, 0.92)',
-          backdropFilter: 'blur(16px)',
+          background: 'rgba(255, 255, 255, 0.98)',
+          backdropFilter: 'blur(8px)',
+          WebkitBackdropFilter: 'blur(8px)',
           borderBottom: '1px solid var(--border)',
           padding: '0.75rem 1.5rem',
+          boxShadow: '0 1px 3px rgba(0,0,0,0.03)',
         }}
       >
         <div
@@ -102,10 +125,11 @@ export default function Navbar() {
               display: 'flex',
               alignItems: 'center',
               gap: '0.75rem',
-              color: 'var(--text-bright)',
+              color: 'var(--text-primary)',
               fontWeight: 800,
               fontSize: '1.2rem',
               letterSpacing: '-0.02em',
+              textDecoration: 'none',
             }}
           >
             <img
@@ -115,8 +139,8 @@ export default function Navbar() {
               onError={(e) => { e.target.style.display = 'none'; }}
             />
             <div style={{ display: 'flex', flexDirection: 'column' }}>
-              <span style={{ fontFamily: 'var(--font-display)', color: '#ffffff', lineHeight: 1.1 }}>
-                NEXORA <span style={{ color: 'var(--accent-teal-light)' }}>2026</span>
+              <span style={{ fontFamily: 'var(--font-display)', color: 'var(--text-primary)', lineHeight: 1.1 }}>
+                NEXORA <span style={{ color: 'var(--accent-teal)' }}>2026</span>
               </span>
               <span style={{ fontSize: '0.68rem', color: 'var(--text-secondary)', fontWeight: 500 }}>
                 HCST Mathura
@@ -130,18 +154,36 @@ export default function Navbar() {
             style={{
               display: 'flex',
               alignItems: 'center',
-              gap: '1.25rem',
+              gap: '0.5rem',
             }}
           >
-            <Link to="/" style={{ color: location.pathname === '/' ? 'var(--accent-teal-light)' : 'var(--text-secondary)', fontWeight: 500, fontSize: '0.9rem' }}>Home</Link>
-            <Link to="/about" style={{ color: location.pathname === '/about' ? 'var(--accent-teal-light)' : 'var(--text-secondary)', fontWeight: 500, fontSize: '0.9rem' }}>About</Link>
-            <Link to="/tracks" style={{ color: location.pathname === '/tracks' ? 'var(--accent-teal-light)' : 'var(--text-secondary)', fontWeight: 500, fontSize: '0.9rem' }}>Tracks</Link>
-            <Link to="/important-dates" style={{ color: location.pathname === '/important-dates' ? 'var(--accent-teal-light)' : 'var(--text-secondary)', fontWeight: 500, fontSize: '0.9rem' }}>Dates</Link>
-            <Link to="/guidelines" style={{ color: location.pathname === '/guidelines' ? 'var(--accent-teal-light)' : 'var(--text-secondary)', fontWeight: 500, fontSize: '0.9rem' }}>Guidelines</Link>
-            <Link to="/speakers" style={{ color: location.pathname === '/speakers' ? 'var(--accent-teal-light)' : 'var(--text-secondary)', fontWeight: 500, fontSize: '0.9rem' }}>Speakers</Link>
-            <Link to="/organizing-team" style={{ color: location.pathname === '/organizing-team' ? 'var(--accent-teal-light)' : 'var(--text-secondary)', fontWeight: 500, fontSize: '0.9rem' }}>Team</Link>
-            <Link to="/faq" style={{ color: location.pathname === '/faq' ? 'var(--accent-teal-light)' : 'var(--text-secondary)', fontWeight: 500, fontSize: '0.9rem' }}>FAQ</Link>
-            <Link to="/contact" style={{ color: location.pathname === '/contact' ? 'var(--accent-teal-light)' : 'var(--text-secondary)', fontWeight: 500, fontSize: '0.9rem' }}>Contact</Link>
+            {navLinks.map((item) => {
+              const isActive = location.pathname === item.path;
+              return (
+                <Link
+                  key={item.path}
+                  to={item.path}
+                  style={{
+                    color: isActive ? 'var(--accent-teal)' : 'var(--text-primary)',
+                    background: isActive ? 'var(--accent-soft)' : 'transparent',
+                    fontWeight: isActive ? 600 : 500,
+                    fontSize: '0.9rem',
+                    padding: '6px 14px',
+                    borderRadius: '999px',
+                    textDecoration: 'none',
+                    transition: 'all 0.15s ease',
+                  }}
+                  onMouseEnter={(e) => {
+                    if (!isActive) e.currentTarget.style.background = 'var(--accent-soft)';
+                  }}
+                  onMouseLeave={(e) => {
+                    if (!isActive) e.currentTarget.style.background = 'transparent';
+                  }}
+                >
+                  {item.name}
+                </Link>
+              );
+            })}
           </div>
 
           {/* Desktop Right Auth Actions */}
@@ -157,7 +199,7 @@ export default function Navbar() {
               <>
                 {isAdmin ? (
                   <Link to="/admin" className="btn btn-secondary btn-sm" style={{ borderColor: 'var(--accent-teal)' }}>
-                    <Shield size={16} color="var(--accent-teal-light)" />
+                    <Shield size={16} color="var(--accent-teal)" />
                     <span>Admin Panel</span>
                   </Link>
                 ) : (
@@ -193,7 +235,7 @@ export default function Navbar() {
               border: '1px solid var(--border)',
               borderRadius: 'var(--radius-sm)',
               padding: '0.4rem',
-              color: 'var(--text-bright)',
+              color: 'var(--text-primary)',
               cursor: 'pointer',
             }}
             aria-label="Toggle Navigation Menu"
@@ -213,19 +255,20 @@ export default function Navbar() {
               display: 'flex',
               flexDirection: 'column',
               gap: '0.65rem',
+              background: '#FFFFFF',
             }}
           >
-            <Link to="/" onClick={() => setMobileMenuOpen(false)}>Home</Link>
-            <Link to="/about" onClick={() => setMobileMenuOpen(false)}>About HCST & NEXORA</Link>
-            <Link to="/event" onClick={() => setMobileMenuOpen(false)}>Event Overview</Link>
-            <Link to="/tracks" onClick={() => setMobileMenuOpen(false)}>Research Tracks</Link>
-            <Link to="/important-dates" onClick={() => setMobileMenuOpen(false)}>Important Dates</Link>
-            <Link to="/guidelines" onClick={() => setMobileMenuOpen(false)}>Author Guidelines</Link>
-            <Link to="/speakers" onClick={() => setMobileMenuOpen(false)}>Keynote Speakers</Link>
-            <Link to="/organizing-team" onClick={() => setMobileMenuOpen(false)}>Leadership & Team</Link>
-            <Link to="/sponsors" onClick={() => setMobileMenuOpen(false)}>Sponsors & Partners</Link>
-            <Link to="/faq" onClick={() => setMobileMenuOpen(false)}>FAQ</Link>
-            <Link to="/contact" onClick={() => setMobileMenuOpen(false)}>Contact</Link>
+            <Link to="/" onClick={() => setMobileMenuOpen(false)} style={{ color: 'var(--text-primary)', padding: '6px 0' }}>Home</Link>
+            <Link to="/about" onClick={() => setMobileMenuOpen(false)} style={{ color: 'var(--text-primary)', padding: '6px 0' }}>About HCST & NEXORA</Link>
+            <Link to="/event" onClick={() => setMobileMenuOpen(false)} style={{ color: 'var(--text-primary)', padding: '6px 0' }}>Event Overview</Link>
+            <Link to="/tracks" onClick={() => setMobileMenuOpen(false)} style={{ color: 'var(--text-primary)', padding: '6px 0' }}>Research Tracks</Link>
+            <Link to="/important-dates" onClick={() => setMobileMenuOpen(false)} style={{ color: 'var(--text-primary)', padding: '6px 0' }}>Important Dates</Link>
+            <Link to="/guidelines" onClick={() => setMobileMenuOpen(false)} style={{ color: 'var(--text-primary)', padding: '6px 0' }}>Author Guidelines</Link>
+            <Link to="/speakers" onClick={() => setMobileMenuOpen(false)} style={{ color: 'var(--text-primary)', padding: '6px 0' }}>Keynote Speakers</Link>
+            <Link to="/organizing-team" onClick={() => setMobileMenuOpen(false)} style={{ color: 'var(--text-primary)', padding: '6px 0' }}>Leadership & Team</Link>
+            <Link to="/sponsors" onClick={() => setMobileMenuOpen(false)} style={{ color: 'var(--text-primary)', padding: '6px 0' }}>Sponsors & Partners</Link>
+            <Link to="/faq" onClick={() => setMobileMenuOpen(false)} style={{ color: 'var(--text-primary)', padding: '6px 0' }}>FAQ</Link>
+            <Link to="/contact" onClick={() => setMobileMenuOpen(false)} style={{ color: 'var(--text-primary)', padding: '6px 0' }}>Contact</Link>
 
             <div style={{ paddingTop: '0.75rem', borderTop: '1px solid var(--border)', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
               {currentUser ? (

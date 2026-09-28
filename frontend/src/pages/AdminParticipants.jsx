@@ -72,7 +72,7 @@ export default function AdminParticipants() {
       key: 'name',
       render: (name, row) => (
         <div>
-          <strong style={{ color: '#fff' }}>{name}</strong>
+          <strong style={{ color: 'var(--text-primary)' }}>{name}</strong>
           <p style={{ margin: 0, fontSize: '0.8rem', color: 'var(--text-muted)' }}>{row.email}</p>
         </div>
       ),
@@ -186,8 +186,8 @@ export default function AdminParticipants() {
           <div>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '1.5rem', paddingBottom: '1rem', borderBottom: '1px solid var(--border)' }}>
               <div>
-                <h3 style={{ margin: '0 0 0.25rem', color: '#fff' }}>{participantDetail.registration.name}</h3>
-                <p style={{ margin: 0, fontSize: '0.85rem', color: 'var(--accent-teal-light)' }}>{participantDetail.registration.email}</p>
+                <h3 style={{ margin: '0 0 0.25rem', color: 'var(--text-primary)' }}>{participantDetail.registration.name}</h3>
+                <p style={{ margin: 0, fontSize: '0.85rem', color: 'var(--accent-teal)' }}>{participantDetail.registration.email}</p>
                 <p style={{ margin: 0, fontSize: '0.85rem', color: 'var(--text-muted)' }}>{participantDetail.registration.college} • {participantDetail.registration.phone}</p>
               </div>
               <span className={`badge badge-${participantDetail.registration.paymentStatus === 'Verified' ? 'success' : 'pending'}`}>
@@ -198,7 +198,7 @@ export default function AdminParticipants() {
             {/* Payment Proof Section */}
             <div style={{ marginBottom: '1.5rem', background: 'var(--bg-secondary)', padding: '1rem', borderRadius: 'var(--radius-md)', border: '1px solid var(--border)' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <h4 style={{ margin: 0, fontSize: '0.95rem', color: 'var(--accent-cream)' }}>Payment Screenshot Proof</h4>
+                <h4 style={{ margin: 0, fontSize: '0.95rem', color: 'var(--dark-teal)' }}>Payment Screenshot Proof</h4>
                 {participantDetail.registration.paymentProofSignedUrl ? (
                   <a
                     href={participantDetail.registration.paymentProofSignedUrl}
@@ -217,7 +217,7 @@ export default function AdminParticipants() {
 
             {/* Submission Section */}
             <div>
-              <h4 style={{ color: 'var(--accent-cream)', marginBottom: '0.75rem' }}>Research Paper Submission</h4>
+              <h4 style={{ color: 'var(--dark-teal)', marginBottom: '0.75rem' }}>Research Paper Submission</h4>
               {participantDetail.submission ? (
                 <div style={{ background: 'var(--bg-secondary)', padding: '1.25rem', borderRadius: 'var(--radius-md)', border: '1px solid var(--border)' }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem' }}>
@@ -226,7 +226,7 @@ export default function AdminParticipants() {
                       {participantDetail.submission.status}
                     </span>
                   </div>
-                  <h4 style={{ color: '#fff', margin: '0.5rem 0' }}>{participantDetail.submission.title}</h4>
+                  <h4 style={{ color: 'var(--text-primary)', margin: '0.5rem 0' }}>{participantDetail.submission.title}</h4>
                   <p style={{ fontSize: '0.875rem', lineHeight: 1.6, color: 'var(--text-secondary)', marginBottom: '1rem' }}>
                     {participantDetail.submission.abstract}
                   </p>

@@ -48,8 +48,7 @@ export default function ToastContainer() {
             gap: '0.75rem',
             padding: '0.85rem 1.15rem',
             borderRadius: 'var(--radius-md)',
-            background: 'rgba(10, 33, 33, 0.95)',
-            backdropFilter: 'blur(16px)',
+            background: '#FFFFFF',
             border: `1px solid ${
               toast.type === 'success'
                 ? 'var(--status-success)'
@@ -57,8 +56,8 @@ export default function ToastContainer() {
                 ? 'var(--status-error)'
                 : 'var(--status-info)'
             }`,
-            boxShadow: 'var(--shadow-lg)',
-            color: 'var(--text-bright)',
+            boxShadow: 'var(--shadow-md)',
+            color: 'var(--text-primary)',
             fontSize: '0.9rem',
           }}
         >

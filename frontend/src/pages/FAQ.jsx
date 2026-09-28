@@ -70,10 +70,10 @@ export default function FAQ() {
                 onClick={() => setOpenIdx(isOpen ? null : idx)}
               >
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '1rem' }}>
-                  <h3 style={{ margin: 0, fontSize: '1.05rem', color: isOpen ? 'var(--accent-teal-light)' : 'var(--text-bright)' }}>
+                  <h3 style={{ margin: 0, fontSize: '1.05rem', color: isOpen ? 'var(--accent-teal)' : 'var(--text-primary)' }}>
                     {faq.q}
                   </h3>
-                  <div style={{ color: 'var(--accent-teal-light)', flexShrink: 0 }}>
+                  <div style={{ color: 'var(--accent-teal)', flexShrink: 0 }}>
                     {isOpen ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
                   </div>
                 </div>
@@ -87,9 +87,9 @@ export default function FAQ() {
           })}
         </div>
 
-        <div className="card" style={{ textAlign: 'center', background: 'rgba(45, 212, 191, 0.05)' }}>
-          <h3 style={{ marginBottom: '0.5rem' }}>Still have questions?</h3>
-          <p style={{ marginBottom: '1.25rem' }}>We're here to assist you with registration or academic queries.</p>
+        <div className="card" style={{ textAlign: 'center', background: 'var(--accent-soft)', border: '1px solid var(--accent-teal)' }}>
+          <h3 style={{ marginBottom: '0.5rem', color: 'var(--text-primary)' }}>Still have questions?</h3>
+          <p style={{ marginBottom: '1.25rem', color: 'var(--text-secondary)' }}>We're here to assist you with registration or academic queries.</p>
           <Link to="/contact" className="btn btn-outline btn-sm">
             Contact Coordinator Desk
           </Link>

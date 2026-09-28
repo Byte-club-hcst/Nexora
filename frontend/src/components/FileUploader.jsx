@@ -67,12 +67,12 @@ export default function FileUploader({
         onDrop={handleDrop}
         onClick={() => inputRef.current?.click()}
         style={{
-          border: `2px dashed ${dragActive ? 'var(--accent-teal-light)' : displayError ? 'var(--status-error)' : 'var(--border)'}`,
+          border: `2px dashed ${dragActive ? 'var(--accent-teal)' : displayError ? 'var(--status-error)' : 'var(--border)'}`,
           borderRadius: 'var(--radius-md)',
           padding: '1.75rem 1rem',
           textAlign: 'center',
           cursor: 'pointer',
-          background: dragActive ? 'rgba(45, 212, 191, 0.08)' : 'var(--bg-input)',
+          background: dragActive ? 'var(--accent-soft)' : '#FFFFFF',
           transition: 'all 0.2s ease',
           position: 'relative',
         }}
@@ -96,7 +96,7 @@ export default function FileUploader({
                 width: '44px',
                 height: '44px',
                 borderRadius: '50%',
-                background: 'rgba(16, 185, 129, 0.15)',
+                background: 'var(--status-success-bg)',
                 color: 'var(--status-success)',
                 display: 'flex',
                 alignItems: 'center',
@@ -106,7 +106,7 @@ export default function FileUploader({
               {selectedFile.type.includes('image') ? <ImageIcon size={22} /> : <FileText size={22} />}
             </div>
             <div>
-              <p style={{ fontWeight: 600, color: 'var(--text-bright)', fontSize: '0.95rem' }}>
+              <p style={{ fontWeight: 600, color: 'var(--text-primary)', fontSize: '0.95rem' }}>
                 {selectedFile.name}
               </p>
               <p style={{ fontSize: '0.8rem', color: 'var(--text-secondary)' }}>
@@ -121,8 +121,8 @@ export default function FileUploader({
                 width: '44px',
                 height: '44px',
                 borderRadius: '50%',
-                background: 'rgba(45, 212, 191, 0.1)',
-                color: 'var(--accent-teal-light)',
+                background: 'var(--accent-soft)',
+                color: 'var(--accent-teal)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -132,7 +132,7 @@ export default function FileUploader({
             </div>
             <div>
               <p style={{ fontWeight: 500, color: 'var(--text-primary)', fontSize: '0.95rem' }}>
-                <span style={{ color: 'var(--accent-teal-light)', textDecoration: 'underline' }}>
+                <span style={{ color: 'var(--accent-teal)', textDecoration: 'underline' }}>
                   Click to upload
                 </span>{' '}
                 or drag and drop

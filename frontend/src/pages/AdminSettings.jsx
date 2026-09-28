@@ -192,7 +192,7 @@ export default function AdminSettings() {
       {/* TAB 1: EVENT CONFIGURATION */}
       {activeTab === 'config' && (
         <div className="card" style={{ maxWidth: '780px', padding: '2.5rem' }}>
-          <h3 style={{ marginBottom: '1.5rem', color: '#fff' }}>Dynamic Event Parameters</h3>
+          <h3 style={{ marginBottom: '1.5rem', color: 'var(--dark-teal)' }}>Dynamic Event Parameters</h3>
           <form onSubmit={handleConfigSubmit}>
             <div className="grid-2" style={{ gap: '1.25rem' }}>
               <div className="form-group">
@@ -254,7 +254,7 @@ export default function AdminSettings() {
 
             <div className="grid-2" style={{ gap: '1.25rem', marginTop: '0.5rem', padding: '1.25rem', background: 'var(--bg-secondary)', borderRadius: 'var(--radius-md)', border: '1px solid var(--border)' }}>
               <div>
-                <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontWeight: 600, color: '#fff', marginBottom: '0.5rem' }}>
+                <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '0.5rem' }}>
                   <input
                     type="checkbox"
                     checked={formData.registrationOpen}
@@ -272,7 +272,7 @@ export default function AdminSettings() {
               </div>
 
               <div>
-                <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontWeight: 600, color: '#fff', marginBottom: '0.5rem' }}>
+                <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '0.5rem' }}>
                   <input
                     type="checkbox"
                     checked={formData.submissionOpen}
@@ -323,7 +323,7 @@ export default function AdminSettings() {
                       <span className={`badge badge-${a.priority === 'urgent' ? 'error' : 'info'}`}>{a.priority}</span>
                       <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>{new Date(a.createdAt).toLocaleString()}</span>
                     </div>
-                    <h3 style={{ margin: '0 0 0.4rem', color: '#fff' }}>{a.title}</h3>
+                    <h3 style={{ margin: '0 0 0.4rem', color: 'var(--text-primary)' }}>{a.title}</h3>
                     <p style={{ margin: 0, fontSize: '0.9rem' }}>{a.content}</p>
                   </div>
                   <Button variant="danger" size="sm" onClick={() => handleDeleteAnnouncement(a.id)}>
